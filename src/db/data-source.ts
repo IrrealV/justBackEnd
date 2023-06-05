@@ -19,6 +19,7 @@ export const AppDataSource = new DataSource({
   database: config.database,
   synchronize: sync,
   logging: log,
+  connectTimeout: 10000, // Tiempo de espera del handshake en milisegundos
   entities: [User, Restaurant, Booking, Room, Table, Opinion],
   subscribers: [],
   migrations: [],
