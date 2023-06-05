@@ -4,7 +4,7 @@ config();
 
 const dataConnection = {
   host: process.env.HOST || "",
-  port: process.env.DB_PORT || "",
+  port: process.env.PORT || "",
   database: process.env.DATABASE || "",
   db_user: process.env.DB_USER || "",
   db_passwd: process.env.DB_PASSWORD || "",

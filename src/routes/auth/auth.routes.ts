@@ -12,6 +12,6 @@ const profile = uploadedProfile.uploadedProfile;
 router.post("/login", login);
 router.post("/register", validateNewUser, profile, createUser);
 router.post("/reset-password-request", resetPasswordRequest);
-router.get("/reset-password", resetPassword);
+router.post("/reset-password", resetPassword);
 
 export default router;

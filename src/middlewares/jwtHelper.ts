@@ -1,6 +1,5 @@
 import { expressjwt } from "express-jwt";
 import { config } from "dotenv";
-import verifyToken from "../middlewares/tokenHelper.js";
 
 config();
 
