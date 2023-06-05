@@ -25,5 +25,10 @@ app.use(routes);
 // Database
 AppDataSource.initialize();
 
-// Port
-server.listen(3000);
+// Use PORT provided in environment or default to 3000
+const port = process.env.PORT || 3000;
+
+// Listen on `port` and 0.0.0.0
+server.listen(port, Number("0.0.0.0"), ()=>{
+  console.log('Servidor escuchando en el puerto '+ port)
+})
