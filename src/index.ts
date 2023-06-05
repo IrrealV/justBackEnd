@@ -28,6 +28,6 @@ AppDataSource.initialize();
 // Port & ip
 const port = process.env.PORT || 3000;
 
-server.listen(port, () => {
+server.listen("0.0.0.0", Number(port), () => {
   console.log(`Servidor escuchando en el puerto ${port}}`);
 });
