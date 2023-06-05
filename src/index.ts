@@ -27,7 +27,7 @@ AppDataSource.initialize();
 
 // Port & ip
 const port = process.env.PORT || 3000;
-const ip = null
-server.listen(port, ip, () => {
-  console.log(`Servidor escuchando en la dirección IP ${ip}:${port}`);
+
+server.listen(port, () => {
+  console.log(`Servidor escuchando en el puerto ${port}}`);
 });
