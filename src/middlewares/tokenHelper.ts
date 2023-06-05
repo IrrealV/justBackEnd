@@ -6,7 +6,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     // Obtener el token del encabezado de la solicitud
     const token = req.headers.authorization?.split(" ")[1];
 
-  if (req.path != "/login" && req.path != "/register"){
+  if (req.path != "/login" && req.path != "/register" && req.path != "/reset-password-request" && req.path != "/reset-password"){
     if (!token) {
       return res.status(401).json({ message: "Token not provided" });
     }
