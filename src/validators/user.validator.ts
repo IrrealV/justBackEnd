@@ -3,11 +3,11 @@ import validateResult from "../middlewares/validateHelper.js";
 import { Request, Response, NextFunction } from "express";
 
 const validateNewUser = [
-  check("username").exists(),
+  check("name").exists(),
 
   check("email").optional().isEmail(),
 
-  check("phoneNumber").exists(),
+  check("phone").exists(),
 
   check("password").exists(),
 
