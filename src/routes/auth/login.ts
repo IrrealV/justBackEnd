@@ -35,7 +35,7 @@ const login = async (req: Request, res: Response) => {
       process.env.JWT_SECRET
     );
     res.send({
-      jwt: token,
+      token: token,
     });
     return;
   }
