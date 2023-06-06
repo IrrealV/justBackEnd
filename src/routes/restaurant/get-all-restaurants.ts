@@ -52,8 +52,8 @@ const getAllRestaurants = async (req: Request, res: Response) => {
       img_profile: restaurant.imgProfile,
       img_gallery: restaurant.imgGallery,
       city: restaurant.city,
-      latitude: restaurant.latitude.toString(),
-      longitude: restaurant.longitude.toString(),
+      latitude: restaurant.latitude,
+      longitude: restaurant.longitude,
       status: restaurant.status,
       /* free_table_inside: restaurant.status === 0,
       free_table_in_terrace: restaurant.status === 0 && restaurant.terrace, */
