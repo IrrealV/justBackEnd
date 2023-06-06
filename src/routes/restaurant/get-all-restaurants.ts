@@ -54,7 +54,7 @@ const getAllRestaurants = async (req: Request, res: Response) => {
       address: restaurant.address,
       latitude: restaurant.latitude.toString(),
       longitude: restaurant.longitude.toString(),
-      status: restaurant.status === 0,
+      status: restaurant.status,
       /* free_table_inside: restaurant.status === 0,
       free_table_in_terrace: restaurant.status === 0 && restaurant.terrace, */
       
