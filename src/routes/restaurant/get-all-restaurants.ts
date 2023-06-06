@@ -41,27 +41,24 @@ const getAllRestaurants = async (req: Request, res: Response) => {
     return {
       id: restaurant.id,
       name: restaurant.restaurantName,
-      has_terrace: restaurant.terrace,
+      phone: restaurant.phone,
+      terrace: restaurant.terrace,
       description: restaurant.description,
-      food_type: restaurant.typeFood,
+      type_food: restaurant.typeFood,
       score: restaurant.score,
       avg_price: restaurant.avgPrice,
       url: restaurant.url,
-      phone: restaurant.phone,
-      profile_image: restaurant.imgProfile,
-      image_gallery_path: restaurant.imgGallery,
+      img_profile: restaurant.imgProfile,
+      img_gallery: restaurant.imgGallery,
       city: restaurant.city,
       address: restaurant.address,
-      coordinates: {
-        latitude: restaurant.latitude.toString(),
-        longitude: restaurant.longitude.toString(),
-      },
-      availability: {
-        open: restaurant.status === 0,
-        free_table_inside: restaurant.status === 0,
-        free_table_in_terrace: restaurant.status === 0 && restaurant.terrace,
-      },
-      opinions: formattedOpinions,
+      latitude: restaurant.latitude.toString(),
+      longitude: restaurant.longitude.toString(),
+      status: restaurant.status === 0,
+      /* free_table_inside: restaurant.status === 0,
+      free_table_in_terrace: restaurant.status === 0 && restaurant.terrace, */
+      
+      /* opinions: formattedOpinions, */
     };
   });
 
