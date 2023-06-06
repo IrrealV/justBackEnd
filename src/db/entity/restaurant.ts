@@ -31,7 +31,7 @@ export class Restaurant {
   city: string;
 
   @Column()
-  terrace: boolean;
+  terrace: number;
 
   @Column({
     type: "float",

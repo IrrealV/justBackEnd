@@ -41,6 +41,7 @@ const getAllRestaurants = async (req: Request, res: Response) => {
     return {
       id: restaurant.id,
       name: restaurant.restaurantName,
+      address: restaurant.address,
       phone: restaurant.phone,
       terrace: restaurant.terrace,
       description: restaurant.description,
@@ -51,7 +52,6 @@ const getAllRestaurants = async (req: Request, res: Response) => {
       img_profile: restaurant.imgProfile,
       img_gallery: restaurant.imgGallery,
       city: restaurant.city,
-      address: restaurant.address,
       latitude: restaurant.latitude.toString(),
       longitude: restaurant.longitude.toString(),
       status: restaurant.status,
