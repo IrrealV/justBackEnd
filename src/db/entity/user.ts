@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, BeforeInsert } from "typeorm";
-import { randomBytes } from 'crypto';
+import { randomBytes } from "crypto";
 
 @Entity()
 export class User {
@@ -29,7 +29,7 @@ export class User {
     unsigned: true,
   })
   role: number;
-   //El rol es un string de un numero, entre 0 y 10
+  //El rol es un string de un numero, entre 0 y 10
 
   @Column({
     nullable: true,
@@ -41,4 +41,7 @@ export class User {
 
   @Column()
   token: string;
+
+  @Column()
+  isVerified: boolean = false;
 }

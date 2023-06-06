@@ -12,6 +12,7 @@ const jwt = expressjwt({
     "/api/v1/register",
     "/api/v1/reset-password-request",
     "/api/v1/reset-password",
+    "/api/v1/verify-user",
   ],
 });
 

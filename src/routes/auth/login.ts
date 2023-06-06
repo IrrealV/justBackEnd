@@ -17,6 +17,13 @@ const login = async (req: Request, res: Response) => {
     email: email,
   });
 
+  if (!dbUser.isVerified) {
+    res.send({
+      error: "User has not verified email",
+    });
+    return;
+  }
+
   const result = await bcrypt.compare(password, dbUser.password);
 
   if (result) {
