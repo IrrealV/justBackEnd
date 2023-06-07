@@ -29,7 +29,7 @@ const login = async (req: Request, res: Response) => {
   if (result) {
     const token = jsonwebtoken.sign(
       {
-        exp: Math.floor(Date.now() / 1000) + 60 * 60,
+        exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24,
         data: "test",
       },
       process.env.JWT_SECRET
