@@ -15,5 +15,5 @@ export const verifyUser = async (req: Request, res: Response) => {
 
   await usersRepo.save(userToVerify);
 
-  res.redirect("http://localhost:4200");
+  res.redirect("http://justbackend-production.up.railway.app/api/v1/login");
 };

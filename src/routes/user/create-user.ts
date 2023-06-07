@@ -23,7 +23,7 @@ const createUser = async (req: Request, res: Response) => {
     phoneNumber,
     password: encryptedPassword,
     role,
-    profileImage: req.body.profileImage, // Utiliza la ruta de la imagen guardada en req.body.profileImage
+    profileImage: req.body.profileImage,
     device,
     token: userToken,
     isVerified: false,
@@ -32,8 +32,8 @@ const createUser = async (req: Request, res: Response) => {
 
   await sendMail({
     to: email,
-    subject: "Confirm your new account",
-    from: "RESTAURANT INFO <noreply@restaurantinfo.com>",
+    subject: "Verificacion Usuario",
+    from: "ExpressBackend<expressbackend@test4.qastusoft.com.es>",
     html: `
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html
@@ -564,11 +564,12 @@ color:#cccccc!important;
                                         font-size: 14px;
                                       "
                                     >
-                                      You’ve received this message because your
-                                      email address has been registered with our
-                                      site. Please click the button below to
-                                      verify your email address and confirm that
-                                      you are the owner of this account.
+                                      Has recibido este mensaje por que tu cuenta de
+                                      email ha sido registrado en nuestro dominio.
+                                      Porfavor, haga click en el siguiente boton para
+                                      verificar su dirección email y que usted es el
+                                      dueño de esta cuenta.
+                            
                                     </p>
                                   </td>
                                 </tr>
@@ -647,7 +648,7 @@ color:#cccccc!important;
                                           border-left-width: 30px;
                                           border-right-width: 30px;
                                         "
-                                        >CONFIRM YOUR EMAIL</a
+                                        >CONFIRME SU EMAIL</a
                                       ></span
                                     >
                                   </td>
@@ -676,8 +677,8 @@ color:#cccccc!important;
                                         font-size: 14px;
                                       "
                                     >
-                                      Once confirmed, this email will be
-                                      uniquely associated with your account.
+                                      Una vez se confirme, este email será
+                                      asociado directamente con su cuenta
                                     </p>
                                   </td>
                                 </tr>

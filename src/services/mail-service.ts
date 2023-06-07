@@ -14,10 +14,10 @@ export const createTransport = () => {
       },
       logger: true,
       debug: true,
-      from: "RESTAURANT INFO <noreply@restaurantinfo.com>",
+      from: "ExpressBackend<expressbackend@test4.qastusoft.com.es>",
     },
     {
-      from: "RESTAURANT INFO  <noreply@restaurantinfo.com>",
+      from: "ExpressBackend<expressbackend@test4.qastusoft.com.es>",
     }
   );
 
