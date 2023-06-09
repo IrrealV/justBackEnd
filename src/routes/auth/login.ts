@@ -24,7 +24,7 @@ const login = async (req: Request, res: Response) => {
     return;
   }else if(!dbUser){
     res.send({
-      error: "Usuario no registrado, porfavor registrese",
+      error: "Usuario no encontrado, porfavor registrese",
     });
   }
 
