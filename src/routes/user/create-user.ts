@@ -5,6 +5,7 @@ import { io } from "../../index.js";
 import bcrypt from "bcrypt";
 import crypto from "node:crypto";
 import jsonwebtoken from "jsonwebtoken";
+import { Error } from "../../errors/error.response.js";
 
 import { sendMail } from "../../services/mail-service.js";
 
@@ -24,9 +25,14 @@ const createUser = async (req: Request, res: Response) => {
   
 
   if(dbUser) {
-    res.send({
-      error: "Correo ya en uso",
-    });
+    res.status(403)
+    .send(
+      Error.response(
+        403,
+       "Repetido",
+       "Email en uso, porfavor use otro o inicie sesión",
+      )
+    );
     return
   }
 
