@@ -22,6 +22,10 @@ const createUser = async (req: Request, res: Response) => {
     email: email,
   });
 
+  console.log(dbUser.email)
+
+  console.log(email)
+
   if(dbUser.email == email) {
     res.send({
       error: "Correo ya en uso",
