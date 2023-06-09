@@ -26,6 +26,7 @@ const login = async (req: Request, res: Response) => {
     res.send({
       error: "Usuario no encontrado, porfavor registrese",
     });
+    return
   }
 
   const result = await bcrypt.compare(password, dbUser.password);

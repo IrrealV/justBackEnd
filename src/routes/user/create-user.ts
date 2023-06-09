@@ -17,6 +17,18 @@ const createUser = async (req: Request, res: Response) => {
   const encryptedPassword = await bcrypt.hash(password, 10);
 
   const userToken = crypto.randomBytes(48).toString("hex");
+
+  const dbUser = await usersRepo.findOneBy({
+    email: email,
+  });
+
+  if(dbUser.email == email) {
+    res.send({
+      error: "Correo ya en uso",
+    });
+    return
+  }
+
   const createdUser = await usersRepo.save({
     username,
     email,
