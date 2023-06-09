@@ -21,8 +21,9 @@ const createUser = async (req: Request, res: Response) => {
   const dbUser = await usersRepo.findOneBy({
     email: email,
   });
+  
 
-  if(dbUser.email == req.body.email) {
+  if(dbUser) {
     res.send({
       error: "Correo ya en uso",
     });
