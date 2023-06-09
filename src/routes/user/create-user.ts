@@ -12,7 +12,7 @@ const usersRepo = AppDataSource.getRepository(User);
 
 
 const createUser = async (req: Request, res: Response) => {
-  const { username, email, phoneNumber, password, role, device } = req.body;
+  const { name, email, phone, password, role, device } = req.body;
 
   const encryptedPassword = await bcrypt.hash(password, 10);
 
@@ -31,9 +31,9 @@ const createUser = async (req: Request, res: Response) => {
   }
 
   const createdUser = await usersRepo.save({
-    username,
+    username: name,
     email,
-    phoneNumber,
+    phoneNumber: phone,
     password: encryptedPassword,
     role,
     profileImage: req.body.profileImage,
