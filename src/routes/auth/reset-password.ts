@@ -15,7 +15,7 @@ const resetPassword = async (req: Request, res: Response) => {
 
   if (!userToChangePass) {
     res.send({
-      error: "Invalid token",
+      error: "Token invalido",
     });
     return;
   }

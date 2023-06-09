@@ -19,7 +19,7 @@ const resetPasswordRequest = async (req: Request, res: Response) => {
 
   if (!user) {
     res.send({
-      error: "User not found",
+      error: "Usuario no encontrado",
     });
     return;
   }
@@ -30,8 +30,8 @@ const resetPasswordRequest = async (req: Request, res: Response) => {
 
   const emailProperties = {
     to: user.email,
-    from: "RESTAURANT INFO <noreply@restaurantinfo.com>",
-    subject: "Password reset",
+    from: "ExpressBackend<expressbackend@test4.qastusoft.com.es>",
+    subject: "Reestablecimiento contraseña",
     html: `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">

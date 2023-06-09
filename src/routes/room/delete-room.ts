@@ -13,7 +13,7 @@ const deleteRoomById = async (req: Request, res: Response) => {
   });
 
   if (affected <= 0) {
-    res.status(404).send(Error.response(403, "Not found", "Entity not found"));
+    res.status(404).send(Error.response(403, "No encontrado", "Entidad no encontrada"));
     return;
   }
 

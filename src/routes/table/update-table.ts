@@ -12,7 +12,7 @@ const updateTableById = async (req: Request, res: Response) => {
   const tableToUpdate = await tableRepo.findOneBy({ id: Number(id) });
 
   if (!tableToUpdate) {
-    return res.status(404).send("Table not found");
+    return res.status(404).send("Mesa no encontrada");
   }
 
   tableToUpdate.state = state;
@@ -22,7 +22,7 @@ const updateTableById = async (req: Request, res: Response) => {
   const updatedTable = await tableRepo.save(tableToUpdate);
 
   res.send({
-    status: "Table updated successfully",
+    status: "Mesa actualizada con exito",
     table: updatedTable,
   });
 };

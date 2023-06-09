@@ -18,10 +18,10 @@ const createTable = async (req: Request, res: Response) => {
   const roomToFind = await roomRepo.findOneBy({ id: Number(room) });
 
   if (!restaurantToFind) {
-    return res.status(404).send("Restaurant not found");
+    return res.status(404).send("Restaurante no encontrado");
   }
   if (!roomToFind) {
-    return res.status(404).send("Room not found");
+    return res.status(404).send("Sala no encontrada");
   }
 
   const createdTable = await tableRepo.save({

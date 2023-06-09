@@ -19,7 +19,7 @@ const login = async (req: Request, res: Response) => {
 
   if (!dbUser.isVerified) {
     res.send({
-      error: "User has not verified email",
+      error: "El email de este usuario aun no ha sido verificado",
     });
     return;
   }
@@ -45,8 +45,8 @@ const login = async (req: Request, res: Response) => {
     .send(
       Error.response(
         403,
-        "Invalid credentials",
-        "Credentials provided does not match with any account"
+        "Credenciales invalidas",
+        "La credenciales proporcionadas no corresponden a ninguna cuenta"
       )
     );
 };

@@ -19,7 +19,7 @@ const updateRoomById = async (req: Request, res: Response) => {
 
   // When room not found send error
   if (affected <= 0) {
-    res.status(404).send(Error.response(403, "Not found", "Entity not found"));
+    res.status(404).send(Error.response(403, "No encontrado", "Entidad no encontrada"));
     return;
   }
 
@@ -28,7 +28,7 @@ const updateRoomById = async (req: Request, res: Response) => {
   // Send updated room as response
   io.emit("updateRoom", room);
   res.send({
-    status: "success",
+    status: "exito",
     room: room,
   });
 };

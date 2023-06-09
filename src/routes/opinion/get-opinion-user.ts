@@ -12,7 +12,7 @@ const getOpinionByuser = async (req: Request, res: Response) => {
   const userToFind = await userRepo.findOneBy({ id: Number(id) });
 
   if (!userToFind) {
-    return res.status(404).send("User not found");
+    return res.status(404).send("Usuario no encontrado");
   }
 
   const opinionFromUser = await opinionRepo.find({

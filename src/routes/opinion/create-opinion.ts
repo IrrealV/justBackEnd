@@ -10,7 +10,7 @@ const createOpinion =async (req:Request, res: Response) => {
     const opinionToSave = await opinionRepo.save(opinion)
 
     res.send({
-        status: 'success',
+        status: 'exito',
         opinion: opinionToSave,
     })
 }

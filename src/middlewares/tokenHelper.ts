@@ -12,12 +12,12 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     req.path != "/reset-password"
   ) {
     if (!token) {
-      return res.status(401).json({ message: "Token not provided" });
+      return res.status(401).json({ message: "Falta token" });
     }
     // Verificar y decodificar el token
     jwt.verify(token, process.env.JWT_SECRET, (err: any, decoded: any) => {
       if (err) {
-        return res.status(401).json({ message: "Invalid token" });
+        return res.status(401).json({ message: "Token incorrecto" });
       }
       next();
     });

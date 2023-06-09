@@ -12,7 +12,7 @@ const getTableByRoom = async (req: Request, res: Response) => {
   const roomToFind = await roomRepo.findOneBy({ id: Number(id) });
 
   if (!roomToFind) {
-    return res.status(404).send("Room not found");
+    return res.status(404).send("Sala no encontrada");
   }
 
   const tableFromRoom = await tableRepo.find({

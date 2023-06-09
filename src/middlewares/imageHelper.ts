@@ -3,7 +3,7 @@ import { Request } from "express";
 
 const storageProfile: StorageEngine = multer.diskStorage({
   destination: function (req: Request, file, cb) {
-    cb(null, "../public/profileImg");
+    cb(null, "../public/profileImg"); //Ruta en la que se va a guardar la imagen
   },
   filename: function (req: Request, file, cb) {
     const fileName = file.fieldname + "-" + Date.now();

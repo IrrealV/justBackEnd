@@ -10,7 +10,7 @@ const createRoom =async (req:Request, res: Response) => {
     const roomToSave = await roomRepo.save(room)
 
     res.send({
-        status: 'success',
+        status: 'exito',
         room: roomToSave,
     })
 }

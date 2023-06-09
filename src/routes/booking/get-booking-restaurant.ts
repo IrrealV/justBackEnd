@@ -12,7 +12,7 @@ const getBookingByRestaurant = async (req: Request, res: Response) => {
   const restaurantToFind = await restaurantRepo.findOneBy({ id: Number(id) });
 
   if (!restaurantToFind) {
-    return res.status(404).send("Restaurant not found");
+    return res.status(404).send("Restaurante no encontrada");
   }
 
   const bookingFromRestaurant = await bookingRepo.find({

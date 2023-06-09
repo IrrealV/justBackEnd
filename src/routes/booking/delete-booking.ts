@@ -12,7 +12,7 @@ const deleteBookingById = async (req: Request, res: Response) => {
   });
 
   res.send({
-    status: "Deleted successfully",
+    status: "Mesa borrada con exito",
     booking: bookingToDelelte,
   });
 };

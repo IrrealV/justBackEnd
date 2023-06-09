@@ -12,7 +12,7 @@ const deleteTableById = async (req: Request, res: Response) => {
   });
 
   res.send({
-    status: "Deleted successfully",
+    status: "Borrado con exito",
     table: tableToDelelte,
   });
 };

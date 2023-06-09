@@ -22,7 +22,7 @@ const updateUserById = async (req: Request, res: Response) => {
   const userToUpdate = await usersRepo.findOneBy({ id: Number(id) });
 
   if (!userToUpdate) {
-    return res.status(404).send("User not found");
+    return res.status(404).send("Usuario no encontrado");
   }
 
   // Actualizar los campos del usuario con los valores nuevos

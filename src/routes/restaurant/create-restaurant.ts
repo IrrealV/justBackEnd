@@ -50,7 +50,7 @@ const createRestaurant = async (req: Request, res: Response) => {
   io.emit("createRestaurant", restaurantToSave);
 
   res.send({
-    status: "success",
+    status: "exito",
     restaurant: restaurantToSave,
   });
 };

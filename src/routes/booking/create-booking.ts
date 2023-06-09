@@ -26,10 +26,10 @@ const createBooking = async (req: Request, res: Response) => {
   const tableToFind = await tableRepo.findOneBy({ id: Number(table) });
 
   if (!restaurantToFind) {
-    return res.status(404).send("Restaurant not found");
+    return res.status(404).send("Restaurante no encontrado");
   }
   if (!tableToFind) {
-    return res.status(404).send("Table not found");
+    return res.status(404).send("Mesa no encontrada");
   }
 
   const createdBooking = await bookingRepo.save({

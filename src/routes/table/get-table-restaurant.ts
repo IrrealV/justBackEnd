@@ -12,7 +12,7 @@ const getTableByRestaurant = async (req: Request, res: Response) => {
   const restaurantToFind = await restaurantRepo.findOneBy({ id: Number(id) });
 
   if (!restaurantToFind) {
-    return res.status(404).send("Restaurant not found");
+    return res.status(404).send("Restaurante no encontrado");
   }
 
   const tableFromRestaurant = await tableRepo.find({

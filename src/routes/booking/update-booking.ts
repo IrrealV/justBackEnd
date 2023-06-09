@@ -12,7 +12,7 @@ const updateBookingById = async (req: Request, res: Response) => {
   const bookingToUpdate = await bookingRepo.findOneBy({ id: Number(id) });
 
   if (!bookingToUpdate) {
-    return res.status(404).send("Booking not found");
+    return res.status(404).send("Reserva no encontrada");
   }
 
   bookingToUpdate.state = state;
@@ -23,7 +23,7 @@ const updateBookingById = async (req: Request, res: Response) => {
   const updatedbooking = await bookingRepo.save(bookingToUpdate);
 
   res.send({
-    status: "Booking updated successfully",
+    status: "Reserva actualizada con exito",
     booking: updatedbooking,
   });
 };
