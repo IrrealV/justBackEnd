@@ -22,6 +22,10 @@ const login = async (req: Request, res: Response) => {
       error: "El email de este usuario aun no ha sido verificado",
     });
     return;
+  }else if(!dbUser){
+    res.send({
+      error: "Usuario no registrado, porfavor registrese",
+    });
   }
 
   const result = await bcrypt.compare(password, dbUser.password);
