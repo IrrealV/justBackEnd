@@ -18,14 +18,24 @@ const login = async (req: Request, res: Response) => {
   });
 
   if (!dbUser.isVerified) {
-    res.send({
-      error: "El email de este usuario aun no ha sido verificado",
-    });
+    res.status(403)
+    .send(
+      Error.response(
+        403,
+       "No verificado",
+       "El email de este usuario aun no ha sido verificado",
+      )
+    );
     return;
   }else if(!dbUser){
-    res.send({
-      error: "Usuario no encontrado, porfavor registrese",
-    });
+    res.status(403)
+    .send(
+      Error.response(
+        404,
+       "No encontrado",
+       "Email no encontrado, porfavor registrese",
+      )
+    );
     return
   }
 
