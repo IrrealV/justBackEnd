@@ -13,9 +13,9 @@ const createTable = async (req: Request, res: Response) => {
 
   //Buscar el restaurante y la sala por sus id
   const restaurantToFind = await restaurantRepo.findOneBy({
-    id: Number(restaurant),
+    id: Number(restaurant.id),
   });
-  const roomToFind = await roomRepo.findOneBy({ id: Number(room) });
+  const roomToFind = await roomRepo.findOneBy({ id: Number(room.id) });
 
   if (!restaurantToFind) {
     return res.status(404).send("Restaurante no encontrado");
@@ -31,7 +31,7 @@ const createTable = async (req: Request, res: Response) => {
   });
 
   res.send({
-    success: "Table created successfully",
+    success: "Mesa creada con exito",
   });
 };
 

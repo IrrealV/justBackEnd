@@ -7,6 +7,7 @@ import {
 } from "typeorm";
 import { Table } from "./table.js";
 import { Room } from "./room.js";
+import { Booking } from "./booking.js";
 @Entity()
 export class Restaurant {
   @PrimaryGeneratedColumn()
@@ -69,6 +70,12 @@ export class Restaurant {
 
   @Column({ default: 0 })
   status: number;
+
+  @OneToMany(()=> Booking, (booking) => booking.restaurant,{
+    cascade:["update"]
+  })
+  @JoinColumn({name: "booking_id",})
+  booking: Booking[]
 
   @OneToMany(() => Table, (table) => table.restaurant, {
     cascade: ["update"],

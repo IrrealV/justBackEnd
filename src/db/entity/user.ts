@@ -1,5 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn, BeforeInsert } from "typeorm";
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  BeforeInsert,
+  OneToOne,
+  JoinColumn,
+  Relation,
+} from "typeorm";
 import { randomBytes } from "crypto";
+import { Booking } from "./booking.js";
 
 @Entity()
 export class User {
@@ -44,4 +53,11 @@ export class User {
 
   @Column()
   isVerified: boolean = false;
+
+  @OneToOne(() => Booking, (booking) => booking.user,{
+    cascade:["update"]
+  })
+  @JoinColumn({ name: "booking_id" })
+  booking: Relation<Booking>;
+  
 }

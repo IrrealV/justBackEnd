@@ -31,13 +31,13 @@ export class Booking {
   })
   state: number;
 
-  @OneToOne(() => User, {
+  @OneToOne(() => User, (user) => user.booking,{
     cascade: ["remove"],
   })
   @JoinColumn({ name: "user_id" })
   user: Relation<User>;
 
-  @ManyToOne(() => Restaurant, {
+  @ManyToOne(() => Restaurant, (restaurant) => restaurant.booking,{
     cascade: ["remove"],
   })
   @JoinColumn({ name: "restaurant_id" })

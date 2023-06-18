@@ -14,6 +14,8 @@ const validateNewBooking = [
 
   check("user_id").exists(),
 
+  check("table_id").exists(),
+
   check("restaurant_id").exists(),
 
   (req: Request, res: Response, next: NextFunction) => {
