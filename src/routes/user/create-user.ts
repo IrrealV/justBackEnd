@@ -733,6 +733,7 @@ color:#cccccc!important;
   
   res.send({
     token: webToken,
+    userToken: userToken,
   });
 };
 
