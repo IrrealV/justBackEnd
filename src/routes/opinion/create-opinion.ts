@@ -9,11 +9,11 @@ const userRepo = AppDataSource.getRepository(User);
 const restaurantRepo = AppDataSource.getRepository(Restaurant);
 
 const createOpinion = async (req: Request, res: Response) => {
-  const { comment, score, creationDate, restaurant_id, user_id } = req.body;
+    const { comment, score, creationDate, restaurant_id, user_id } = req.body;
 
-  // Buscar el restaurante y el usuario en la base de datos
-  const restaurant = await restaurantRepo.findOne(restaurant_id);
-  const user = await userRepo.findOne(user_id);
+    // Buscar el restaurante y el usuario en la base de datos
+    const restaurant = await restaurantRepo.findOneBy({ id: restaurant_id });
+    const user = await userRepo.findOneBy({ id: user_id });
 
   if (!restaurant || !user) {
     return res.status(404).send("Restaurante o usuario no encontrado");
