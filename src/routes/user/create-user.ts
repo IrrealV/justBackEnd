@@ -19,12 +19,15 @@ const createUser = async (req: Request, res: Response) => {
 
   const userToken = crypto.randomBytes(48).toString("hex");
 
-  const dbUser = await usersRepo.findOneBy({
+  const dbUserMail = await usersRepo.findOneBy({
     email: email,
   });
   
+  const dbUserPhone = await usersRepo.findOneBy({
+    phoneNumber: phone,
+  });
 
-  if(dbUser) {
+  if(dbUserMail || dbUserPhone) {
     res.status(403)
     .send(
       Error.response(
