@@ -13,7 +13,7 @@ router.get("/table/:id", getTableById);
 router.get("/tables_room/:id", getTableByRoom);
 router.get("/tables_restaurant/:id", getTableByRestaurant);
 router.post("/table", validateNewTable, createTable);
-router.put("/update_table", updateTableById);
+router.put("/update_table/:id", updateTableById);
 router.delete("/delete_table/:id", deleteTableById);
 
 export default router;
