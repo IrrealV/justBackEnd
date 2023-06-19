@@ -51,6 +51,7 @@ const login = async (req: Request, res: Response) => {
     );
     res.send({
       token: token,
+      id: "Su id de usuario es" + dbUser.id
     });
     return;
   }
