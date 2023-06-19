@@ -558,7 +558,7 @@ color:#cccccc!important;
                                         color: #333333;
                                       "
                                     >
-                                      Confirm Your Email
+                                      Confirme Su Email
                                     </h1>
                                   </td>
                                 </tr>
