@@ -33,7 +33,7 @@ const createUser = async (req: Request, res: Response) => {
       Error.response(
         403,
        "Repetido",
-       "Email en uso, porfavor use otro o inicie sesión",
+       "Email o Telefono en uso, porfavor use otro o inicie sesión",
       )
     );
     return
