@@ -40,7 +40,7 @@ const createBooking = async (req: Request, res: Response) => {
     return res.status(404).send("Usuario no encontrado");
   }
 
-  const userBooked = await bookingRepo.findOneByOrFail({user: user_id  })
+  const userBooked = await bookingRepo.findOneBy({user: user_id  })
 
   if(userBooked){
     return res.status(503).send("El usuario ya tiene una reserva")
